@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ModelApllication.ViewModels.Components.MainNavLinkVM>
+
+@foreach (var navlink in Model)
+{
+    <li @(Html.Raw(navlink.IsActive ? " class=\"active\"" : ""))>
+        <a asp-action="@navlink.Action" asp-controller="@navlink.Controller">
+            @navlink.Text
+        </a>
+    </li>
+}
